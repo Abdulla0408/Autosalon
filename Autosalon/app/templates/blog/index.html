@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<h1><a href="{% url 'index' %}">Home</a></h1>
+
+<hr>
+
+<h1>All catigories</h1>
+
+<hr>
+{% for category in categories %}
+<ul>
+    <li><a href="{% url 'bolim' category.pk %}">{{ category }}</a></li>
+</ul>
+{% endfor %}
+
+<h1>{{ title }}</h1>
+
+{% for post in posts %}
+<hr>
+<ul>
+    <li><p>Nomi: {{ post.title }}</p></li>
+    <li><p>Matni: {{ post.content }}</p></li>
+    <li><p>Vaqti: {{ post.created }}</p></li>
+</ul>
+<hr>
+{% endfor %}
+
+
+</body>
+</html>
